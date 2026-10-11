@@ -40,7 +40,7 @@ const seedDatabase = async () => {
     // 2. Seed Default Admin & Operator Users
     const operator = await User.create({
       operator_id: 'OP-1042',
-      password_hash: 'admin123', // Will be hashed by pre-save hook in User model
+      password: 'admin123',
       role: 'operator',
       assigned_ward: wardAlpha._id
     });

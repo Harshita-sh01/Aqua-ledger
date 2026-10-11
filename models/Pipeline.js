@@ -7,7 +7,7 @@ const pipelineSchema = new mongoose.Schema({
   ward_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Ward', required: true, index: true },
   name: { type: String, required: true, trim: true },
   location: { type: lineStringSchema, required: true },
-  status: { type: String, enum: ['normal', 'critical', 'repair'], default: 'normal' },
+  status: { type: String, enum: ['normal', 'critical', 'repair', 'under_repair'], default: 'normal' },
   max_capacity_lps: { type: Number, required: true, min: 0 }
 }, { versionKey: false });
 pipelineSchema.index({ location: '2dsphere' });
